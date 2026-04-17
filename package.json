@@ -1,0 +1,35 @@
+{
+  "name": "daily-diet-api",
+  "version": "1.0.0",
+  "description": "- Deve ser possível criar um usuário - Deve ser possível identificar o usuário entre as requisições - Deve ser possível registrar uma refeição feita, com as seguintes informações:",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "knex": "node --import tsx/esm ./node_modules/.bin/knex"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaikecesar/daily-diet-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaikecesar/daily-diet-api/issues"
+  },
+  "homepage": "https://github.com/kaikecesar/daily-diet-api#readme",
+  "dependencies": {
+    "fastify": "^5.8.5",
+    "knex": "^3.2.9",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/node": "^25.6.0",
+    "eslint": "^8.57.1",
+    "sqlite3": "^6.0.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}

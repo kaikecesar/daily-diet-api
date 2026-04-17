@@ -1,7 +1,13 @@
 // Libraries
 import { fastify } from 'fastify';
-import { dailyDietRoutes } from './routes/daily_diet';
+import cookie from '@fastify/cookie';
+
+// Application
+import { usersRoutes } from './routes/users';
+import { mealsRoutes } from './routes/meals';
 
 export const app = fastify();
 
-app.register(dailyDietRoutes, { prefix: '/daily-diet' });
+app.register(cookie);
+app.register(usersRoutes, { prefix: '/users' });
+app.register(mealsRoutes, { prefix: '/meals' });

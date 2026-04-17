@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/kaikecesar/daily-diet-api#readme",
   "dependencies": {
+    "@fastify/cookie": "^11.0.2",
     "fastify": "^5.8.5",
     "knex": "^3.2.9",
     "zod": "^4.3.6"

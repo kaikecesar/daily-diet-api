@@ -95,4 +95,13 @@ export async function mealsRoutes(app: FastifyInstance) {
       return reply.status(204).send();
     },
   );
+
+  // List meals
+  app.get('/', { preHandler: [authenticateUser] }, async (request, reply) => {
+    const meals = await connection('meals')
+      .select()
+      .where('user_id', request.user?.id);
+
+    return reply.status(200).send(meals);
+  });
 }

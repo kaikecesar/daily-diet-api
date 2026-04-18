@@ -68,8 +68,29 @@ export async function mealsRoutes(app: FastifyInstance) {
         .where({
           id,
           user_id: request.user?.id,
+          deleted_at: null,
         })
         .update(updateData);
+
+      return reply.status(204).send();
+    },
+  );
+
+  // Delete meal
+  app.delete(
+    '/:id',
+    { preHandler: [authenticateUser] },
+    async (request, reply) => {
+      // Validate params
+      const deleteMealParamsSchema = z.object({
+        id: z.string().uuid(),
+      });
+      const { id } = deleteMealParamsSchema.parse(request.params);
+
+      await connection('meals').update('deleted_at', Date.now()).where({
+        id,
+        user_id: request.user?.id,
+      });
 
       return reply.status(204).send();
     },

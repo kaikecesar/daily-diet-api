@@ -74,7 +74,7 @@ export async function mealsRoutes(app: FastifyInstance) {
           description,
           is_on_diet: isOnDiet,
           date,
-        }).filter(([_, value]) => value !== undefined),
+        }).filter(([, value]) => value !== undefined),
       );
 
       await connection('meals')

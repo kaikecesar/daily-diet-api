@@ -1,10 +1,13 @@
 // Libraries
 import knex, { type Knex } from 'knex';
 
+// Application
+import { env } from './env';
+
 export const config: Knex.Config = {
-  client: 'sqlite',
+  client: env.DATABASE_CLIENT,
   connection: {
-    filename: './database/app.db',
+    filename: env.DATABASE_URL,
   },
   useNullAsDefault: true,
   migrations: {

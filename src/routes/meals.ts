@@ -80,7 +80,7 @@ export async function mealsRoutes(app: FastifyInstance) {
       await connection('meals')
         .where({
           id,
-          user_id: request.user?.id,
+          user_id: request.user!.id,
           deleted_at: null,
         })
         .update(updateData);

@@ -24,4 +24,7 @@ jobs:
       - name: Lint validation
         run: npm run lint
       - name: Test validation
+        env:
+          DATABASE_CLIENT: sqlite
+          DATABASE_URL: ./database/test.db
         run: npm test
